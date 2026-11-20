@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Effects
 import Quickshell
+import Quickshell.Io
 import qs.Common
 import qs.Services
 import qs.Widgets
@@ -325,6 +326,35 @@ PluginComponent {
         onTriggered: {
             if (!root.isLoading && !root.isTestingAll)
                 root.refresh();
+        }
+    }
+
+    IpcHandler {
+        target: "ssclash"
+
+        function toggle(): string {
+            if (root.interactionActive) {
+                root.closePopout();
+                return "CLOSED";
+            }
+            root.triggerPopout();
+            return "OPENED";
+        }
+
+        function open(): string {
+            if (!root.interactionActive)
+                root.triggerPopout();
+            return "OPENED";
+        }
+
+        function close(): string {
+            root.closePopout();
+            return "CLOSED";
+        }
+
+        function refresh(): string {
+            root.refresh();
+            return "REFRESHED";
         }
     }
 
