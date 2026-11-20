@@ -1,0 +1,21 @@
+{
+  "$schema": "https://github.com/AvengeMedia/DankMaterialShell/raw/refs/heads/master/PLUGINS/plugin-schema.json",
+  "id": "ssclashDashboard",
+  "name": "SSClash Dashboard",
+  "description": "Quick proxy group switcher and latency tester for Clash / Mihomo (SSClash) router dashboard",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Cha1000000",
+  "icon": "vpn_lock",
+  "type": "widget",
+  "capabilities": [
+    "dankbar-widget"
+  ],
+  "component": "./SSClashWidget.qml",
+  "settings": "./SSClashSettings.qml",
+  "requires_dms": ">=1.2.0",
+  "permissions": [
+    "settings_read",
+    "settings_write"
+  ]
+}

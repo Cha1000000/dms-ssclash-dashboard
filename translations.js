@@ -1,0 +1,95 @@
+.pragma library
+
+var strings = {
+    "en": {
+        "title": "SSClash Dashboard",
+        "mode_rule": "Rule",
+        "mode_global": "Global",
+        "mode_direct": "Direct",
+        "search_placeholder": "Search proxy groups or servers...",
+        "collapse_all": "Collapse all groups",
+        "expand_all": "Expand all groups",
+        "test_all": "Test latency for all groups",
+        "test_group": "Test group latency",
+        "test_node": "Test server latency",
+        "refresh": "Refresh",
+        "unfix_tooltip": "Fixed node — click to unlock auto fallback",
+        "auto_tooltip": "Automatic fallback",
+        "online": "Online",
+        "offline": "Offline",
+        "connecting": "Connecting...",
+        "testing": "Testing...",
+        "offline_title": "Router unreachable",
+        "offline_desc": "Could not connect to SSClash API at",
+        "retry": "Retry",
+        "no_results": "No matching groups or servers",
+        "clear_search": "Clear search",
+        "ms_unit": "ms",
+        "settings_title": "SSClash Dashboard",
+        "settings_desc": "Manage Mihomo / Clash proxy groups directly from the DankMaterialShell top bar.",
+        "setting_api_url": "Controller API URL",
+        "setting_api_url_desc": "Base URL of your router's Clash / Mihomo External Controller",
+        "setting_secret": "API Secret (optional)",
+        "setting_secret_desc": "Bearer token if your Clash controller requires authentication",
+        "setting_accent_color": "Accent Color",
+        "setting_accent_color_desc": "Neon highlight color for active servers, mode and icon",
+        "setting_test_url": "Latency Test URL",
+        "setting_test_url_desc": "Endpoint used to measure server delay",
+        "setting_test_timeout": "Latency Test Timeout",
+        "setting_test_timeout_desc": "Maximum wait time per delay check (milliseconds)",
+        "setting_poll_interval": "Status Check Interval",
+        "setting_poll_interval_desc": "How often to poll router availability in background (seconds)",
+        "setting_show_global": "Show GLOBAL group",
+        "setting_show_global_desc": "Display the GLOBAL selector group card in the dashboard"
+    },
+    "ru": {
+        "title": "SSClash",
+        "mode_rule": "Правило",
+        "mode_global": "Глобальный",
+        "mode_direct": "Прямой",
+        "search_placeholder": "Поиск групп и серверов...",
+        "collapse_all": "Свернуть все группы",
+        "expand_all": "Развернуть все группы",
+        "test_all": "Замерить задержку всех групп",
+        "test_group": "Замерить задержку группы",
+        "test_node": "Замерить задержку сервера",
+        "refresh": "Обновить",
+        "unfix_tooltip": "Узел зафиксирован — нажмите, чтобы вернуть автовыбор",
+        "auto_tooltip": "Автоматический Fallback",
+        "online": "В сети",
+        "offline": "Нет связи",
+        "connecting": "Подключение...",
+        "testing": "Замер...",
+        "offline_title": "Роутер недоступен",
+        "offline_desc": "Не удалось подключиться к API SSClash по адресу",
+        "retry": "Повторить",
+        "no_results": "Ничего не найдено",
+        "clear_search": "Сбросить поиск",
+        "ms_unit": "мс",
+        "settings_title": "SSClash Dashboard",
+        "settings_desc": "Быстрое переключение серверов и групп туннелей Clash / Mihomo (SSClash) прямо из верхней панели.",
+        "setting_api_url": "Адрес API контроллера",
+        "setting_api_url_desc": "Базовый URL External Controller на роутере (например, http://192.168.10.1:9090)",
+        "setting_secret": "Секрет API (необязательно)",
+        "setting_secret_desc": "Токен авторизации, если на контроллере задан secret",
+        "setting_accent_color": "Акцентный цвет",
+        "setting_accent_color_desc": "Неоновый цвет выделения активного сервера, режима и иконки",
+        "setting_test_url": "URL для замера задержки",
+        "setting_test_url_desc": "Адрес, по которому проверяется пинг серверов",
+        "setting_test_timeout": "Таймаут замера задержки",
+        "setting_test_timeout_desc": "Максимальное время ожидания ответа при тесте пинга (мс)",
+        "setting_poll_interval": "Интервал проверки статуса",
+        "setting_poll_interval_desc": "Как часто проверять доступность роутера в фоне (сек)",
+        "setting_show_global": "Показывать группу GLOBAL",
+        "setting_show_global_desc": "Отображать карточку группы GLOBAL в дашборде"
+    }
+};
+
+function tr(key, lang) {
+    var dict = strings[lang] || strings["ru"];
+    if (dict && dict[key] !== undefined)
+        return dict[key];
+    if (strings["en"][key] !== undefined)
+        return strings["en"][key];
+    return key;
+}
